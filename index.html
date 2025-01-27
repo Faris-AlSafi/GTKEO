@@ -7,8 +7,6 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
         }
         .container {
             width: 80%;
@@ -16,134 +14,52 @@
             overflow: hidden;
         }
         .main-info {
-            background: linear-gradient(45deg, #333, #555);
-            color: #fff;
-            padding: 20px;
-            position: relative;
-            text-align: center;
-        }
-        .main-info h1 {
-            margin: 10px 0;
-        }
-        .social-icons {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .social-icons a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-        .social-icons a:hover {
-            transform: scale(1.3);
-        }
-        .section {
-            background: #e7e7e7;
-            padding: 20px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .hobbies, .fun-fact {
-            background: #d1f7d6;
-        }
-        .fun-fact {
-            text-align: center;
-            padding: 30px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                background-color: #d1f7d6;
-            }
-            50% {
-                background-color: #b9e5c3;
-            }
-        }
-        .scroll-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
             background: #333;
             color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            font-size: 18px;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, background 0.3s ease;
+            padding: 20px;
         }
-        .scroll-top:hover {
-            transform: scale(1.1);
-            background: #555;
+        .main-info h1 {
+            margin: 0;
+        }
+        .hobbies, .lewis, .course, .job, .fun-fact {
+            background: #e7e7e7;
+            padding: 15px;
+            margin-bottom: 10px;
         }
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <header class="main-info">
             <h1>GTKEO</h1>
             <h1>Group Members: Adam, Faris, Ibrahim, Mohammad, Zayd</h1>
-            <div class="social-icons">
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
         </header>
 
-        <section class="section lewis">
-            <h2>Year at Lewis: [Your Years at Lewis]</h2>
-            <h2>Lewis major/minor/concentrations: [Your major/minor/concentrations]</h2>
-            <h2>Reasons for pursuing this degree: [Your reasons for pursuing the degree]</h2>
+        <section class="lewis">
+			<h2>Year at Lewis: [Your Years at Lewis]</h2>
+			<h2>Lewis major/minor/concentrations: [Your major/minor/concentrations]</h2>
+			<h2>Reasons for pursuing this degree: [Your reasons for pursuing the degree]</h2>
         </section>
 
-        <section class="section course">
+		<section class="course">
             <h2>Reasons for Taking This Course</h2>
             <p>[Your reasons for taking this course]</p>
         </section>
 
-        <section class="section job">
-            <p>Current/Recent Job</p>
-            <p>[Your job responsibilities]</p>
-        </section>
+		<section class="job">
+            <h2>Current/Recent Job</h2>
+			<p>[Your job responsibilities]</p>
+        </section>		
 
-        <section class="section hobbies">
+        	<section class="hobbies">
             <h2>Hobbies and Special Interests</h2>
             <p>[Your hobbies or special interests]</p>
         </section>
 
-        <section class="section fun-fact">
+        	<section class="fun-fact">
             <h2>Fun Fact</h2>
             <p>[A fun fact about yourself]</p>
         </section>
     </div>
-
-    <button class="scroll-top" onclick="scrollToTop()">⬆</button>
-
-    <script>
-        // Scroll-to-top button logic
-        const scrollBtn = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
