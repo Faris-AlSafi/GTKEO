@@ -5,8 +5,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #f4f4f4, #cfd9df);
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         .container {
             width: 80%;
@@ -14,20 +16,27 @@
             overflow: hidden;
         }
         .main-info {
-            background: #333;
+            background: linear-gradient(135deg, #333, #555);
             color: #fff;
             padding: 20px;
             text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .main-info h1 {
             margin: 0;
         }
         .hobbies, .lewis, .course, .job, .fun-fact {
-            background: #e7e7e7;
+            background: #ffffff;
             padding: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hobbies:hover, .lewis:hover, .course:hover, .job:hover, .fun-fact:hover {
+            transform: scale(1.02);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.25);
         }
         .profile-image {
             display: block;
@@ -35,19 +44,25 @@
             height: 800px;
             object-fit: cover; 
             margin: 20px auto; 
-            border: 2px solid #333; 
-            border-radius: 10px; 
+            border: 5px solid #333; 
+            border-radius: 20px; 
+            transition: transform 0.2s;
+        }
+        .profile-image:hover {
+            transform: scale(1.05);
         }
         button {
-            background-color: #333;
+            background: linear-gradient(135deg, #333, #555);
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
         }
         button:hover {
-            background-color: #555;
+            background: linear-gradient(135deg, #444, #666);
+            transform: scale(1.1);
         }
         .progress-bar {
             width: 100%;
@@ -57,7 +72,7 @@
         }
         .progress-bar div {
             height: 20px;
-            background-color: #4caf50;
+            background: linear-gradient(135deg, #4caf50, #6ad66a);
             width: 0%;
             text-align: center;
             line-height: 20px;
@@ -66,7 +81,7 @@
         }
         .accordion {
             cursor: pointer;
-            background-color: #333;
+            background: linear-gradient(135deg, #333, #444);
             color: #fff;
             padding: 15px;
             border: none;
@@ -75,15 +90,18 @@
             font-size: 16px;
             margin-bottom: 5px;
             border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
         }
         .accordion:hover {
-            background-color: #555;
+            background: linear-gradient(135deg, #444, #555);
+            transform: scale(1.02);
         }
         .accordion-content {
             padding: 15px;
-            background-color: #e7e7e7;
+            background: #f9f9f9;
             display: none;
             border-radius: 5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
     <script>
@@ -113,7 +131,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Add the resized image at the top -->
         <img src="us-800-by-800.jpeg" alt="Group Picture" class="profile-image">
 
         <header class="main-info">
@@ -121,7 +138,6 @@
             <h1>Group Members: Adam, Faris, Ibrahim, Mohammad, Zayd</h1>
         </header>
 
-        <!-- Accordion -->
         <button class="accordion" onclick="toggleAccordion('lewis-content')">About Us at AUS</button>
         <div id="lewis-content" class="accordion-content">
             <section class="lewis">
