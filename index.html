@@ -17,6 +17,7 @@
             background: #333;
             color: #fff;
             padding: 20px;
+            text-align: center;
         }
         .main-info h1 {
             margin: 0;
@@ -25,17 +26,90 @@
             background: #e7e7e7;
             padding: 15px;
             margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
         .profile-image {
             display: block;
             width: 800px;
             height: 800px;
-            object-fit: cover; /* Ensures the image fills the dimensions without distortion */
-            margin: 20px auto; /* Centers the image */
-            border: 2px solid #333; /* Optional: Adds a border */
-            border-radius: 10px; /* Optional: Adds rounded corners */
+            object-fit: cover; 
+            margin: 20px auto; 
+            border: 2px solid #333; 
+            border-radius: 10px; 
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .progress-bar div {
+            height: 20px;
+            background-color: #4caf50;
+            width: 0%;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 5px;
+        }
+        .accordion {
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .accordion:hover {
+            background-color: #555;
+        }
+        .accordion-content {
+            padding: 15px;
+            background-color: #e7e7e7;
+            display: none;
+            border-radius: 5px;
         }
     </style>
+    <script>
+        function updateProgressBar() {
+            const bar = document.getElementById('progress');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    bar.style.width = width + '%';
+                    bar.innerText = width + '%';
+                }
+            }, 50);
+        }
+
+        function toggleAccordion(contentId) {
+            const content = document.getElementById(contentId);
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -47,30 +121,46 @@
             <h1>Group Members: Adam, Faris, Ibrahim, Mohammad, Zayd</h1>
         </header>
 
-        <section class="lewis">
-            <h2>Our Standing at AUS: Senior II</h2>
-            <h2>Our major: Computer Engineering</h2>
-            <h2>Reasons for pursuing this degree: Idk. I thought about it and I still don't know, so honestly I will leave it your imagination.</h2>
-        </section>
+        <!-- Accordion -->
+        <button class="accordion" onclick="toggleAccordion('lewis-content')">About Us at AUS</button>
+        <div id="lewis-content" class="accordion-content">
+            <section class="lewis">
+                <h2>Our Standing at AUS: Senior II</h2>
+                <h2>Our major: Computer Engineering</h2>
+                <h2>Reasons for pursuing this degree: Idk. I thought about it and I still don't know, so honestly I will leave it to your imagination.</h2>
+                <p><i>P.S. We're starting to think we might be in a simulation. Stay tuned for updates.</i></p>
+            </section>
+        </div>
 
         <section class="course">
             <h2>Reasons for Taking This Course</h2>
             <p>It is a part of the course catalog.</p>
+            <p><i>Also, the professor promised cookies. We’re still waiting...</i></p>
         </section>
 
         <section class="job">
             <h2>Current/Recent Job</h2>
-            <p>[Your job responsibilities]</p>
+            <p>Professional procrastinator, specializing in last-minute brilliance and midnight coffee-making skills.</p>
+            <p>Also, unofficial meme curator for the group chat.</p>
         </section>      
 
         <section class="hobbies">
             <h2>Hobbies and Special Interests</h2>
-            <p>[Your hobbies or special interests]</p>
+            <p>Adam: Perfecting the art of sarcastic comments.</p>
+            <p>Faris: Trying to convince everyone that pineapple on pizza is valid.</p>
+            <p>Ibrahim: Collecting existential crises as a side hustle.</p>
+            <p>Mohammad: Converting caffeine into code and occasional wisdom.</p>
+            <p>Zayd: Watching documentaries to appear smarter in group conversations.</p>
         </section>
 
         <section class="fun-fact">
             <h2>Fun Fact</h2>
-            <p>[A fun fact about yourself]</p>
+            <p>Our group once spent three hours debating whether time travel would cause a butterfly effect... all while forgetting a deadline.</p>
+            <p><i>Bonus fun fact: We think the professor might still be judging us for it.</i></p>
+            <button onclick="updateProgressBar()">How productive are we? Click to find out!</button>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
         </section>
     </div>
 </body>
