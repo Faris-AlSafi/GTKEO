@@ -26,7 +26,7 @@
         .main-info h1 {
             margin: 0;
         }
-        .hobbies, .lewis, .course, .fun-fact, .personal {
+        .section {
             background: #ffffff;
             padding: 15px;
             margin-bottom: 15px;
@@ -47,73 +47,47 @@
             background: linear-gradient(135deg, #444, #666);
             transform: scale(1.1);
         }
-        .accordion {
-            cursor: pointer;
-            background: linear-gradient(135deg, #333, #444);
-            color: #fff;
-            padding: 15px;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 16px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .accordion:hover {
-            background: linear-gradient(135deg, #444, #555);
-            transform: scale(1.02);
-        }
-        .accordion-content {
-            padding: 15px;
-            background: #f9f9f9;
-            display: none;
-            border-radius: 5px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-        }
     </style>
-    <script>
-        function toggleAccordion(contentId) {
-            const content = document.getElementById(contentId);
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
-        <img src="us-800-by-800.jpeg" alt="Group Picture" class="profile-image">
-
         <header class="main-info">
             <h1>V Guys</h1>
             <h1>Group Members: Adam, Faris, Ibrahim, Mohammad, Zayd</h1>
         </header>
 
-        <section class="personal">
+        <section class="section">
+            <h2>Contact Information</h2>
+            <ul>
+                <li>Adam: adam@example.com</li>
+                <li>Faris: faris@example.com</li>
+                <li>Ibrahim: ibrahim@example.com</li>
+                <li>Mohammad: mohammad@example.com</li>
+                <li>Zayd: zayd@example.com</li>
+            </ul>
+            <p>Email me at: <a href="mailto:your-aus-email@aus.edu">your-aus-email@aus.edu</a></p>
+        </section>
+
+        <section class="section">
             <h2>Individual Introduction Pages</h2>
             <button onclick="window.location.href='https://zaltirkawi.github.io/about-me/'">Zayd</button>
         </section>
 
-        <button class="accordion" onclick="toggleAccordion('lewis-content')">About Us at AUS</button>
-        <div id="lewis-content" class="accordion-content">
-            <section class="lewis">
-                <h2>Our Standing at AUS: Senior II</h2>
-                <h2>Our major: Computer Engineering</h2>
-                <h2>Reasons for pursuing this degree: We just really love computers.</h2>
-                <p><i>P.S. We're starting to think we might be in a simulation. Stay tuned for updates.</i></p>
-            </section>
-        </div>
+        <section class="section">
+            <h2>About Us at AUS</h2>
+            <p><strong>Our Standing at AUS:</strong> Senior II</p>
+            <p><strong>Our Major:</strong> Computer Engineering</p>
+            <p><strong>Reasons for pursuing this degree:</strong> We just really love computers.</p>
+            <p><em>P.S. We're starting to think we might be in a simulation. Stay tuned for updates.</em></p>
+        </section>
 
-        <section class="course">
+        <section class="section">
             <h2>What We Hope to Learn in this Course</h2>
             <p>It is a part of the course catalog.</p>
             <p>Zayd: I want to get better at working on projects with teams, so given the nature of this course, I think it will be helpful.</p>
         </section> 
 
-        <section class="hobbies">
+        <section class="section">
             <h2>Our Favourite Hobbies and Special Interests</h2>
             <p>Adam: Perfecting the art of sarcastic comments.</p>
             <p>Faris: Trying to convince everyone that pineapple on pizza is valid.</p>
@@ -122,7 +96,7 @@
             <p>Zayd: Art, music, video games, TV shows.</p>
         </section>
 
-        <section class="fun-fact">
+        <section class="section">
             <h2>Fun Fact</h2>
             <p>We need to think about it.</p>
             <p>Zayd: I can beat Dark Souls 3 in 3.5 hours.</p>
